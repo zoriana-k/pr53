@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Functions and Constants</title>
+</head>
+<body>
+
+<h1>Math Functions and Constants</h1>
+
+<div id="constants"></div>
+<div id="functions"></div>
+<div id="random"></div>
+
+<script>
+    // Константи
+    const constants = [
+        { name: 'Значення константи е', value: Math.E },
+        { name: 'Значення константи π', value: Math.PI },
+        { name: 'Десятковий логарифм постійної Ейлера (е)', value: Math.LOG10E },
+        { name: 'Двійковий логарифм постійної Ейлера (е)', value: Math.LOG2E },
+        { name: 'Натуральний логарифм числа 10', value: Math.LN10 },
+        { name: 'Натуральний логарифм числа 2', value: Math.LN2 },
+        { name: 'Корінь квадратний із двох', value: Math.SQRT2 },
+        { name: 'Корінь квадратний з однієї другої', value: Math.SQRT1_2 }
+    ];
+
+    // Функції
+    const functions = [
+        { name: 'Результат зведення в степінь 4^2', value: Math.pow(4, 2) },
+        { name: 'Результат добування квадратного кореня з 4', value: Math.sqrt(4) },
+        { name: 'Результат добування квадратного кореня з -9', value: Math.sqrt(-9) },
+        { name: 'Результат обчислення модуля |-9|', value: Math.abs(-9) },
+        { name: 'Результат обчислення косинуса нуля радіан', value: Math.cos(0) },
+        { name: 'Косинус 180 градусів (π радіан)', value: Math.cos(Math.PI) },
+        { name: 'Результат обчислення арккосинуса нуля', value: Math.acos(0) },
+        { name: 'Результат обчислення синуса нуля радіан', value: Math.sin(0) },
+        { name: 'Синус 90 градусів (π /2 радіан)', value: Math.sin(Math.PI / 2) },
+        { name: 'Результат обчислення арксинуса одиниці', value: Math.asin(1) },
+        { name: 'Тангенс 45 градусів (π /4 радіан)', value: Math.tan(Math.PI / 4) },
+        { name: 'Результат обчислення арктангенса одиниці', value: Math.atan(1) },
+        { name: 'Результат зведення е в степінь 2', value: Math.exp(2) },
+        { name: 'Натуральний логарифм від e^2', value: Math.log(Math.exp(2)) },
+        { name: 'Результат обчислення десяткового логарифма від числа 100', value: Math.log10(100) },
+        { name: 'Результат обчислення двійкового логарифма від числа 8', value: Math.log2(8) },
+        { name: 'Тангенс 45 градусів (з округленням)', value: Math.round(Math.tan(Math.PI / 4)) },
+        { name: 'Результат округлення числа 1,00123 у більшу сторону', value: Math.ceil(1.00123) },
+        { name: 'Результат округлення числа -3.1234 у більшу сторону', value: Math.ceil(-3.1234) },
+        { name: 'Результат округлення числа 1,00123 у меншу сторону', value: Math.floor(1.00123) },
+        { name: 'Результат округлення числа -3.1234 у меншу сторону', value: Math.floor(-3.1234) },
+        { name: 'Результат округлення числа 1,44 за правилами арифметики', value: Math.round(1.44) },
+        { name: 'Результат округлення числа 1,54 за правилами арифметики', value: Math.round(1.54) },
+        { name: 'Вибір найбільшого із двох чисел 4 й 2', value: Math.max(4, 2) },
+        { name: 'Вибір найменшого із двох чисел 4 й 2', value: Math.min(4, 2) }
+    ];
+
+    // Генератор випадкових чисел
+    function generateRandomNumber() {
+        return Math.random();
+    }
+
+    // Відображення констант
+    const constantsContainer = document.getElementById('constants');
+    constantsContainer.innerHTML = '<h2>Константи</h2>';
+    constants.forEach(c => {
+        constantsContainer.innerHTML += `<p>${c.name}: ${c.value}</p>`;
+    });
+
+    // Відображення функцій для номера 9 і наступних 4
+    const variantNumber = 9;
+    const functionsContainer = document.getElementById('functions');
+    functionsContainer.innerHTML = '<h2>Функції</h2>';
+    for (let i = variantNumber - 1; i < variantNumber + 4; i++) {
+        functionsContainer.innerHTML += `<p>${functions[i].name}: ${functions[i].value}</p>`;
+    }
+
+    // Відображення випадкового числа
+    const randomContainer = document.getElementById('random');
+    randomContainer.innerHTML = '<h2>Генератор випадкових чисел</h2>';
+    randomContainer.innerHTML += `<p>Випадкове число в інтервалі [0, 1]: ${generateRandomNumber()}</p>`;
+
+</script>
+
+</body>
+</html>
